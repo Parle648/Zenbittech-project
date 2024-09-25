@@ -14,8 +14,19 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
+  id String @id() @default(uuid())
+  email String @unique
+  password String
   name String
-  surname String
-  age Int
+}
+
+model Deals {
+  id String @id @default(uuid())
+  title String @unique
+  days_left Int
+  sold Int 
+  yield Int @default(0)
+  tiket_cost Int
+  amount_cost Int
+  background String
 }
