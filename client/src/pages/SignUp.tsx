@@ -1,5 +1,11 @@
+import SignUpWidget from '../widgets/SignUpWidget/SignUpWidget';
+
 const SignUp = () => {
-  return <div>SignUp</div>;
+  return (
+    <main>
+      <SignUpWidget />
+    </main>
+  );
 };
 
 export default SignUp;
