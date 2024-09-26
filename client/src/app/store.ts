@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import token from '../features/slcies/token-slice/rokenSlice';
+import token from '../features/slcies/token-slice/tokenSlice';
 
 const stateStore = configureStore({
   reducer: {

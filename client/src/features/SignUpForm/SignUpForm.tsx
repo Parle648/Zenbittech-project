@@ -3,12 +3,15 @@ import { useForm } from 'react-hook-form';
 import IForm from './types/IForm';
 import { Link } from 'react-router-dom';
 import styles from './styles/signUpForm.module.scss';
+// import updateToken from '../slcies/token-slice/updateToken';
+import createUserRequest from './api/createUserRequest';
 
 const SignUpForm: FC = () => {
   const { register, handleSubmit } = useForm<IForm>();
 
   const authentificate = (data: IForm) => {
     console.log(data);
+    createUserRequest(data);
   };
 
   return (
