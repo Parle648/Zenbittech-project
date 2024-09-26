@@ -19,7 +19,7 @@ const LoginForm: FC = () => {
       <h4 className={styles.inputTitle}>Email</h4>
       <input
         className={styles.input}
-        type="text"
+        type="email"
         placeholder="example@gmail.com"
         {...register('email', {
           required: true,
@@ -32,7 +32,7 @@ const LoginForm: FC = () => {
       <h4 className={styles.inputTitle}>password</h4>
       <input
         className={styles.input}
-        type="text"
+        type="password"
         placeholder="password"
         {...register('password', {
           required: true,
@@ -42,9 +42,9 @@ const LoginForm: FC = () => {
           },
         })}
       />
-      <input className={styles.submitBtn} type="submit" value="Sign up" />
+      <input className={styles.submitBtn} type="submit" value="Login" />
       <div className={styles.loginPrompt}>
-        Already have an accont?{' '}
+        Don't have an accont?{' '}
         <Link className={styles.loginLink} to="/sign-up">
           Sign up
         </Link>

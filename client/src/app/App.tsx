@@ -5,10 +5,12 @@ import SignUp from '../pages/SignUp';
 import Login from '../pages/Login';
 import { Provider } from 'react-redux';
 import stateStore from './store';
+import Header from '../widgets/Header/Header';
 
 function App() {
   return (
     <Provider store={stateStore}>
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />}></Route>

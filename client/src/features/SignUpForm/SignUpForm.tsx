@@ -29,7 +29,7 @@ const SignUpForm: FC = () => {
       <h4 className={styles.inputTitle}>Email</h4>
       <input
         className={styles.input}
-        type="text"
+        type="email"
         placeholder="example@gmail.com"
         {...register('email', {
           required: true,
@@ -42,7 +42,7 @@ const SignUpForm: FC = () => {
       <h4 className={styles.inputTitle}>password</h4>
       <input
         className={styles.input}
-        type="text"
+        type="password"
         placeholder="password"
         {...register('password', {
           required: true,
