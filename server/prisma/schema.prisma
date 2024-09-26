@@ -5,19 +5,19 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
 }
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Users {
   id String @id() @default(uuid())
-  email String @unique
-  password String
-  name String
+  email String @unique @default("")
+  password String @default("")
+  name String @default("")
 }
 
 model Deals {
