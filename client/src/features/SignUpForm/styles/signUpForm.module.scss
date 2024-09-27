@@ -75,3 +75,21 @@
     }
   }
 }
+
+@media (max-width: 1700px) {
+  .signUpForm {
+    margin: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .signUpForm {
+    margin: 0;
+    width: 300px;
+    .input,
+    .submitBtn {
+      display: block;
+      width: 80%;
+    }
+  }
+}

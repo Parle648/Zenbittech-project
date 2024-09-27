@@ -4,3 +4,12 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@media (max-width: 1100px) {
+  .signUpWidget {
+    justify-content: center;
+  }
+  .asideImg {
+    display: none;
+  }
+}
