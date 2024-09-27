@@ -19,9 +19,9 @@ export class UsersService {
   }
 
   @Get()
-  async authorization(loginDataToken: string) {
+  async authorization(loginData: {email: string, password: string}) {
     try {
-      const loginData: any = jwt.decode(loginDataToken);
+      // const loginData: any = jwt.decode(loginDataToken);
 
       const user = await this.database.users.findFirst({
         where: {

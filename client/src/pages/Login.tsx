@@ -1,5 +1,11 @@
+import LoginWidget from '../widgets/Login/LoginWidget';
+
 const Login = () => {
-  return <div>Login</div>;
+  return (
+    <div>
+      <LoginWidget />
+    </div>
+  );
 };
 
 export default Login;

@@ -17,7 +17,9 @@ services:
       dockerfile: Dockerfile
     restart: always
     environment:
-      DATABASE_URL: postgresql://postgres:example@db:5432/postgres
+      DATABASE_URL: postgres://user:Sb0WOzvSxVXEG1VVXN9jInDtqpyRvckI@dpg-crr71mij1k6c73eais5g-a.oregon-postgres.render.com:5432/database_grfk
+      # postgres://db_ummf_user:n8VulyltfA0Ev2lkawD7AbLZYTVxWaCd@dpg-cp2dr8v79t8c73fs4ps0-a.oregon-postgres.render.com/db_ummf
+      # postgresql://postgres:example@db:5432/postgres 
     ports:
       - "3000:3000"
     volumes:

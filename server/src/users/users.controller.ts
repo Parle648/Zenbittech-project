@@ -13,8 +13,8 @@ export class UsersController {
 
   @Get()
   authorization(
-    @Query() { loginDataToken }: { loginDataToken: string },
+    @Query() { loginData }: { loginData: {email: string, password: string} },
   ): Promise<any> {
-    return this.userService.authorization(loginDataToken);
+    return this.userService.authorization(loginData);
   }
 }
