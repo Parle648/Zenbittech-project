@@ -4,48 +4,44 @@ import first from '../../shared/imgs/image-1.png';
 import second from '../../shared/imgs/image-2.png';
 import third from '../../shared/imgs/image-3.png';
 import fourth from '../../shared/imgs/image-4.png';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import getDeals from './api/getDeals';
+
+const imgs = {
+  first,
+  second,
+  third,
+  fourth,
+};
 
 const Deals = () => {
+  const token = useSelector((store: any) => store.token.value);
+  const deals = useSelector((store: any) => store.deals.value);
+
+  useEffect(() => {
+    getDeals(token);
+  }, []);
+
   return (
     <div className={styles.block} id="#deals">
       <h2 className={styles.title}>Open Deals</h2>
       <div className={styles.grid}>
-        <DealCard
-          name={'The marina tourch'}
-          price={6500000}
-          yieldPercent={9.22}
-          soldPercent={75}
-          dealDaysLeft={50}
-          tiket={60000}
-          background={first}
-        />
-        <DealCard
-          name={'The marina tourch'}
-          price={6500000}
-          yieldPercent={9.22}
-          soldPercent={75}
-          dealDaysLeft={50}
-          tiket={60000}
-          background={second}
-        />
-        <DealCard
-          name={'The marina tourch'}
-          price={6500000}
-          yieldPercent={9.22}
-          soldPercent={75}
-          dealDaysLeft={50}
-          tiket={60000}
-          background={third}
-        />
-        <DealCard
-          name={'The marina tourch'}
-          price={6500000}
-          yieldPercent={9.22}
-          soldPercent={75}
-          dealDaysLeft={50}
-          tiket={60000}
-          background={fourth}
-        />
+        {deals.map((deal: any) => {
+          return (
+            <DealCard
+              name={deal.string}
+              price={deal.amount_cost}
+              yieldPercent={deal.yield}
+              soldPercent={deal.sold}
+              dealDaysLeft={deal.days_left}
+              tiket={deal.tiket_cost}
+              background={
+                imgs[deal.background as 'first' | 'second' | 'third' | 'fourth']
+              }
+            />
+          );
+        })}
       </div>
     </div>
   );
