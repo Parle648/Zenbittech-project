@@ -20,3 +20,10 @@
     background-color: #b4935b;
   }
 }
+
+@media (max-width: 900px) {
+  .button {
+    width: 100px;
+    margin-right: 15px;
+  }
+}

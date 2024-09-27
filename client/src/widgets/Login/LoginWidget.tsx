@@ -5,7 +5,7 @@ import styles from './styles/signUpForm.module.scss';
 const LoginWidget = () => {
   return (
     <div className={styles.LoginWidget}>
-      <img src={authImg} alt="authImg" />
+      <img className={styles.asideImg} src={authImg} alt="authImg" />
       <LoginForm />
     </div>
   );

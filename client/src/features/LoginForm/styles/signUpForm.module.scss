@@ -75,3 +75,21 @@
     }
   }
 }
+
+@media (max-width: 1700px) {
+  .loginForm {
+    margin: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .loginForm {
+    margin: 0;
+    width: 300px;
+    .input,
+    .submitBtn {
+      display: block;
+      width: 80%;
+    }
+  }
+}
