@@ -55,6 +55,11 @@
     line-height: 22px;
 
     border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #bd9c64c5;
+    }
   }
 
   .loginPrompt {
