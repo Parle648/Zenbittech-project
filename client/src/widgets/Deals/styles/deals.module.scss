@@ -21,3 +21,9 @@
     flex-wrap: wrap;
   }
 }
+
+@media (max-width: 1300px) {
+  .block {
+    width: 80vw;
+  }
+}
