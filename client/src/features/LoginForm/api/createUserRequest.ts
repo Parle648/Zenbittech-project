@@ -4,8 +4,10 @@ import updateToken from '../../slcies/token-slice/updateToken';
 const authRequest = async (token: string): Promise<any> => {
   try {
     const authToken = await axios.get(
-      `http://localhost:3000/users?loginToken=${token}`,
+      `http://localhost:3000/users?loginDataToken=${token}`,
     );
+
+    console.log(authToken.data);
 
     if (authToken.data.token) {
       updateToken(authToken.data.token);

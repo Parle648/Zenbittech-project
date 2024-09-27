@@ -33,10 +33,10 @@ const SignUpForm: FC = () => {
         placeholder="example@gmail.com"
         {...register('email', {
           required: true,
-          pattern: {
-            value: /asd/,
-            message: 'email should be ...',
-          },
+          // pattern: {
+          //   value: /asd/,
+          //   message: 'email should be ...',
+          // },
         })}
       />
       <h4 className={styles.inputTitle}>password</h4>

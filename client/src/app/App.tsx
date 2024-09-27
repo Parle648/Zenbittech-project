@@ -10,8 +10,8 @@ import Header from '../widgets/Header/Header';
 function App() {
   return (
     <Provider store={stateStore}>
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Main />}></Route>
           <Route path="/sign-up" element={<SignUp />}></Route>
