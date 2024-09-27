@@ -9,8 +9,7 @@ const LoginForm: FC = () => {
   const { register, handleSubmit } = useForm<IForm>();
 
   const authentificate = (data: IForm) => {
-    // todo sign token and make get request
-    authRequest('token');
+    authRequest(data);
   };
 
   return (

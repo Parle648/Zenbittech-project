@@ -1,12 +1,22 @@
 .card {
-  width: 630px;
-  height: 400px;
+  width: 590px;
+  height: 360px;
   padding: 20px;
   border-radius: 5px;
+  margin-bottom: 10px;
 
   background-color: aqua;
   display: flex;
   align-items: end;
+  position: relative;
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 630px;
+  }
 
   .innerWrapper {
     width: 100%;
@@ -14,23 +24,26 @@
     align-items: baseline;
     justify-content: space-between;
 
+    color: #fff;
+
     .dealInfo {
       display: flex;
       flex-direction: column;
+      position: relative;
     }
 
     .dealsName {
       font-size: 18px;
-      color: #333;
       margin-bottom: 5px;
+      position: relative;
     }
     .dealPrice,
     .dealYield,
     .dealSold,
     .dealDaysLeft {
       font-size: 14px;
-      color: #666;
       margin: 2px 0;
+      position: relative;
     }
   }
 }

@@ -7,6 +7,7 @@ const DealCard = ({
   yieldPercent,
   soldPercent,
   dealDaysLeft,
+  background,
 }: {
   name: string;
   price: number;
@@ -14,9 +15,11 @@ const DealCard = ({
   yieldPercent: number;
   soldPercent: number;
   dealDaysLeft: number;
+  background: any;
 }) => {
   return (
     <div className={styles.card}>
+      <img className={styles.background} src={background} alt="background" />
       <div className={styles.innerWrapper}>
         <div className={styles.dealInfo}>
           <h3 className={styles.dealsName}>{name}</h3>

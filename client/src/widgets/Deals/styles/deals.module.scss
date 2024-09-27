@@ -11,5 +11,13 @@
     color: #b29f7e;
 
     margin-bottom: 20px;
+    padding-top: 50px;
+  }
+
+  .grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
