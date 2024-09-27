@@ -6,7 +6,11 @@ import styles from './styles/signUpForm.module.scss';
 import authRequest from './api/createUserRequest';
 
 const LoginForm: FC = () => {
-  const { register, handleSubmit } = useForm<IForm>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IForm>();
 
   const authentificate = (data: IForm) => {
     authRequest(data);
@@ -15,35 +19,43 @@ const LoginForm: FC = () => {
   return (
     <form className={styles.loginForm} onSubmit={handleSubmit(authentificate)}>
       <h2 className={styles.formTitle}>Login</h2>
+
       <h4 className={styles.inputTitle}>Email</h4>
       <input
         className={styles.input}
-        type="email"
+        type="text"
         placeholder="example@gmail.com"
         {...register('email', {
-          required: true,
-          // pattern: {
-          //   value: /asd/,
-          //   message: 'email should be ...',
-          // },
+          required: 'Email is required',
+          pattern: {
+            value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+            message: 'Invalid email address',
+          },
         })}
       />
-      <h4 className={styles.inputTitle}>password</h4>
+      {errors.email && <p className={styles.error}>{errors.email.message}</p>}
+
+      <h4 className={styles.inputTitle}>Password</h4>
       <input
         className={styles.input}
         type="password"
         placeholder="password"
         {...register('password', {
-          required: true,
+          required: 'Password is required',
           minLength: {
             value: 8,
-            message: 'password should be ...',
+            message: 'Password must be at least 8 characters long',
           },
         })}
       />
+      {errors.password && (
+        <p className={styles.error}>{errors.password.message}</p>
+      )}
+
       <input className={styles.submitBtn} type="submit" value="Login" />
+
       <div className={styles.loginPrompt}>
-        Don't have an accont?{' '}
+        Don't have an account?{' '}
         <Link className={styles.loginLink} to="/sign-up">
           Sign up
         </Link>
